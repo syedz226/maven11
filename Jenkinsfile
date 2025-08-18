@@ -9,5 +9,17 @@ node('built-in')
     {
         cicd.MB()
     }
+    stage('CDeploy')
+    {
+        cicd.CDeploy("SPSL1","54.176.121.38","t4")
+    }
+    stage('CT')
+    {
+        cicd.CT("FunctionalTesting")
+    }
+    stage('CDeliervy')
+    {
+        cicd.CDelivery("SPSL1","54.176.121.38","p4")
+    }
 }
 
